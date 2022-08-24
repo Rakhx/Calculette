@@ -5,8 +5,8 @@ public class CalculGrp2 {
         return a;
 
     }
-    public static double sinus(double c, double b){
-
+    public static double sinus(double c ){
+    double b;
         // converting values to radians
          b = Math.toRadians(c);
         System.out.println(Math.sin(b));

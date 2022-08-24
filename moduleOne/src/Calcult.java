@@ -72,8 +72,8 @@ public class Calcult {
                 @Override
                 public void actionPerformed(ActionEvent actionEvent) {
                     double nombreone= convertText(textChiffreOne.getText());
-                    double nombretwo= convertText(textChiffreOne.getText());
-                    double sinus = CalculGrp2.sinus(nombreone, nombretwo);
+
+                    double sinus = CalculGrp2.sinus(nombreone);
                     Resultat.setText("" + sinus);
 
                 }
