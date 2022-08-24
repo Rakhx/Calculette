@@ -12,5 +12,13 @@ public class CalculGrp2 {
         System.out.println(Math.sin(b));
         return b;
     }
-
+public  static  double soustraction(){
+    int nb1;
+    int nb2;
+        int res;
+        nb1 = 5;
+        nb2 = 3;
+        res = nb1 - nb2;
+        return res;
+}
 }
