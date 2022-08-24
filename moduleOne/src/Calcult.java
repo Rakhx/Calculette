@@ -60,6 +60,31 @@ public class Calcult {
                     String s2 = textChiffreDeux.getText();
                     double d1 = convertText(s1);
                     double d2 = convertText(s2);
+                    double soustraction = CalculGrp2.soustraction(d1,d2);
+
+
+                }
+            });
+
+
+
+            sinusButton.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent actionEvent) {
+                    double nombreone= convertText(textChiffreOne.getText());
+                    double nombretwo= convertText(textChiffreOne.getText());
+                    double sinus = CalculGrp2.sinus(nombreone, nombretwo);
+                    Resultat.setText("" + sinus);
+
+                }
+            });
+
+            racineCarreeButton.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent actionEvent) {
+                    double nombreone= convertText(textChiffreOne.getText());
+                    double racineCarree = CalculGrp2.racineCarree(nombreone);
+                    Resultat.setText("" + racineCarree);
 
                 }
             });
