@@ -1,6 +1,6 @@
 import javax.swing.*;
 
-public class Calcult{
+public class Calcult {
     private JButton expButton;
     private JButton logButton;
     private JTextField textChiffreOne;
@@ -24,5 +24,17 @@ public class Calcult{
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);
+    }
+
+    public double convertText(String texteAConvertir) {
+        double res;
+        try {
+            res = Double.parseDouble(texteAConvertir);
+            return res;
+        } catch (Exception e) {
+            System.out.println("impossible de convertir");
+        }
+        return -1;
+
     }
 }
