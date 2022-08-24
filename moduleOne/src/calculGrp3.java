@@ -1,0 +1,2 @@
+public class calculGrp3 {
+}

@@ -1,21 +1,21 @@
 import javax.swing.*;
 
 public class Calcult{
-    private JButton button1;
-    private JButton button2;
+    private JButton expButton;
+    private JButton logButton;
     private JTextField textChiffreOne;
     private JTextField textChiffreDeux;
     private JLabel Resultat;
-    private JButton button3;
-    private JButton button4;
-    private JButton button5;
-    private JButton button6;
-    private JButton button7;
-    private JButton button8;
-    private JButton button9;
-    private JButton button10;
+    private JButton additionButton;
+    private JButton soustractionButton;
+    private JButton multiplicationButton;
+    private JButton divisionButton;
+    private JButton racineCarreeButton;
+    private JButton puissanceButton;
+    private JButton pourcentageButton;
+    private JButton cosinusButton;
     private JTextField textField1;
-    private JButton button11;
+    private JButton sinusButton;
     private JPanel Principale;
 
     public static void main(String[] args) {
