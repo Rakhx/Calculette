@@ -17,6 +17,41 @@ public class Calcult {
     private JTextField textField1;
     private JButton sinusButton;
     private JPanel Principale;
+    
+        public Calcult() {
+        additionButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                double nombreone = convertText(textChiffreOne.getText());
+                double nombretwo= convertText(textChiffreDeux.getText());
+               double rest=  calculGrp3.addition(nombreone,nombretwo);
+                Resultat.setText(""+rest);
+
+
+            }
+        });
+        pourcentageButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                double nombreone = convertText(textChiffreOne.getText());
+                double nombretwo= convertText(textChiffreDeux.getText());
+                double pourcentage= calculGrp3.pourcentage(nombreone,nombretwo);
+                Resultat.setText(""+pourcentage + "%");
+
+            }
+        });
+
+
+        cosinusButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                double nombreone= convertText(textChiffreOne.getText());
+                double cosinus = calculGrp3.cosinus(nombreone);
+                Resultat.setText("" + cosinus);
+
+            }
+        });
+    }
 
     public static void main(String[] args) {
         JFrame frame = new JFrame("Calcult");
