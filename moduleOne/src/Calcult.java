@@ -15,4 +15,5 @@ public class Calcult {
     private JButton button9;
     private JButton button10;
     private JTextField textField1;
+    private JButton button11;
 }
