@@ -53,9 +53,19 @@ public class Calcult {
 
             }
         });
-    }
+            soustractionButton.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    String s1 = textChiffreOne.getText();
+                    String s2 = textChiffreDeux.getText();
+                    double d1 = convertText(s1);
+                    double d2 = convertText(s2);
 
-    public static void main(String[] args) {
+                }
+            });
+        }
+
+    public static void  main(String[] args) {
         JFrame frame = new JFrame("Calcult");
         frame.setContentPane(new Calcult().Principale);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
