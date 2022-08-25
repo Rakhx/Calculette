@@ -1,0 +1,31 @@
+import org.graphstream.graph.Graph;
+import org.graphstream.graph.Node;
+import org.graphstream.graph.implementations.SingleGraph;
+
+
+public class ManipulationGraph {
+
+    // Graphique avec lequel on travail
+    Graph monGraphique =  new SingleGraph("TEST");;
+
+    protected String styleSheet =
+            "node {" +
+                    "	fill-color: white;" +
+                    "}" +
+                    "node.marked {" +
+                    "	fill-color: red;" +
+                    "}";
+
+    // Fonction de création de graphe
+    public void createGraph(){
+        monGraphique.setAttribute("ui.stylesheet", styleSheet);
+        monGraphique.addNode("A");
+        monGraphique.addNode("B");
+        monGraphique.addEdge("1","A", "B", false);
+        for (Node node : monGraphique) {
+            node.setAttribute("ui.label", node.getId());
+        }
+        monGraphique.display();
+    }
+
+}
