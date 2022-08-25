@@ -2,12 +2,9 @@ import org.graphstream.graph.Graph;
 import org.graphstream.graph.Node;
 import org.graphstream.graph.implementations.SingleGraph;
 
-
 public class ManipulationGraph {
 
-    // Graphique avec lequel on travail
-    Graph monGraphique =  new SingleGraph("TEST");;
-
+    Graph graph = new SingleGraph("graphique");
     protected String styleSheet =
             "node {" +
                     "	fill-color: white;" +
@@ -16,16 +13,49 @@ public class ManipulationGraph {
                     "	fill-color: red;" +
                     "}";
 
-    // Fonction de création de graphe
-    public void createGraph(){
-        monGraphique.setAttribute("ui.stylesheet", styleSheet);
-        monGraphique.addNode("A");
-        monGraphique.addNode("B");
-        monGraphique.addEdge("1","A", "B", false);
-        for (Node node : monGraphique) {
+
+    public void creategraph(){
+
+        graph.setAttribute("ui.stylesheet", styleSheet);
+
+        graph.addNode("A");
+        graph.addNode("B");
+        graph.addNode("C");
+        graph.addNode("D");
+        graph.addNode("E");
+        graph.addNode("F");
+        graph.addNode("G");
+        graph.addNode("H");
+        graph.addNode("I");
+        graph.addNode("J");
+        graph.addNode("K");
+        graph.addNode("L");
+        graph.addNode("M");
+        graph.addEdge("AB", "A", "B");
+        graph.addEdge("BC", "B", "C");
+        graph.addEdge("BD", "B", "D");
+        graph.addEdge("CE", "C", "E");
+        graph.addEdge("CF", "C", "F");
+        graph.addEdge("DE", "D", "E");
+        graph.addEdge("DF", "D", "F");
+        graph.addEdge("EF", "E", "F");
+        graph.addEdge("EG", "E", "G");
+        graph.addEdge("FG", "F", "G");
+        graph.addEdge("FH", "F", "H");
+        graph.addEdge("HI", "H", "I");
+        graph.addEdge("GJ", "G", "J");
+        graph.addEdge("GH", "G", "H");
+        graph.addEdge("JK", "J", "K");
+        graph.addEdge("JL", "J", "L");
+        graph.addEdge("JM", "J", "M");
+        graph.addEdge("KL", "K", "L");
+        graph.addEdge("LM", "L", "M");
+        for (Node node : graph) {
             node.setAttribute("ui.label", node.getId());
         }
-        monGraphique.display();
-    }
 
+
+
+    graph.display();
+    }
 }
