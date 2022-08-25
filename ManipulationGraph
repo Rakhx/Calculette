@@ -59,8 +59,6 @@ public class ManipulationGraph {
             node.setAttribute("ui.label", node.getId());
         }
 
-
-        test();
         graph.display();
     }
 
@@ -105,7 +103,65 @@ public class ManipulationGraph {
      */
     public void randomWalk(int nbStep){
 
+        Random ran = new Random();
+        String chemin = "";
+        Node noeudCourant = graph.getNode("A");
 
+
+        // tableau qui contiendra les voisins du noeud courant
+        Node[] tableauVoisin;
+        // Tableau des noeuds qui ont déja été visité
+        Node[] noeudDejaVu = new Node[graph.getNodeCount()];
+        Node[] voisinNonVu;
+        int index = 0;
+
+        for (int j = 0; j < nbStep; j++) {
+            chemin += "->" + (noeudCourant.getId());
+            noeudDejaVu[index] = noeudCourant;
+            index = index + 1;
+
+            // recupere un tableau des noeuds voisins au noeud courant
+            tableauVoisin = noeudCourant.neighborNodes().toArray(Node[]::new);
+            // combien il y a til de voisin
+            int taillTableau = tableauVoisin.length;
+            // tableau vide des voisins qui n'ont pas encore été visité
+            voisinNonVu = new Node[taillTableau];
+            int indexNonVu = 0;
+            boolean nouveau ;
+            // Filtrer les voisins du noeud courant pour ne garder que les voisins pas encore vu
+            for (int i = 0; i < tableauVoisin.length; i++) {
+                nouveau = true;
+                for (int k = 0; k < noeudDejaVu.length; k++) {
+                    if(tableauVoisin[i] == noeudDejaVu[k]){
+                        nouveau = false;
+                    }
+
+                }
+
+                // si nouveau = true ca veut dire que le noeud n'a pas été vu
+                if(nouveau) {
+                    voisinNonVu[indexNonVu] = tableauVoisin[i];
+                    indexNonVu = indexNonVu + 1;
+                }
+            }
+
+            System.out.println();
+
+            System.out.println("Affichage des voisins du noeuds "+ noeudCourant.getId());
+            // on fait une boucle de la taille du nombre de voisin
+            for (int i = 0; i < voisinNonVu.length ; i = i + 1) {
+                // affiche les voisins un part un
+                System.out.println("voisin numero " + i +" "+ voisinNonVu[i].getId());
+            }
+            // Choix aléatoire d'un entier avec comme max la taille du tableau
+            int aleatoire =  ran.nextInt( voisinNonVu.length);
+            // Recupere le noeud situé a l'index numero "aléatoire"
+            Node unNoeud = voisinNonVu[aleatoire];
+            System.out.println("On va se déplacer au noeud "+unNoeud.getId());
+            noeudCourant = unNoeud;
+        }
+
+        System.out.println(chemin);
     }
 
 }
