@@ -2,9 +2,14 @@ import org.graphstream.graph.Graph;
 import org.graphstream.graph.Node;
 import org.graphstream.graph.implementations.SingleGraph;
 
+import java.util.Random;
+
+
 public class ManipulationGraph {
 
-    Graph graph = new SingleGraph("graphique");
+    // Graphique avec lequel on travail
+    Graph graph =  new SingleGraph("TEST");;
+
     protected String styleSheet =
             "node {" +
                     "	fill-color: white;" +
@@ -13,8 +18,8 @@ public class ManipulationGraph {
                     "	fill-color: red;" +
                     "}";
 
-
-    public void creategraph(){
+    // Fonction de création de graphe
+    public void createGraph(){
 
         graph.setAttribute("ui.stylesheet", styleSheet);
 
@@ -55,7 +60,52 @@ public class ManipulationGraph {
         }
 
 
-
-    graph.display();
+        test();
+        graph.display();
     }
+
+
+    public void test(){
+        // Déclare un objet de nom noeudCourant et de classe//type Node
+        Node noeudCourant;
+        // Associe un noeud du graph a la variable NoeudCourant
+        noeudCourant = graph.getNode("B");
+
+        // recupere un tableau des noeuds voisins au noeud courant
+        Node[] tableauVoisin = noeudCourant.neighborNodes().toArray(Node[]::new);
+
+        // combien il y a til de voisin
+        int taillTableau = tableauVoisin.length;
+
+        // on fait une boucle de la taille du nombre de voisin
+        for (int i = 0; i < taillTableau ; i = i + 1) {
+            // affiche les voisins un part un
+            System.out.println("voisin numero " + i +" "+ tableauVoisin[i].getId());
+        }
+
+        // Crée un objet ran de type//classe Random
+        Random ran ;
+        ran = new Random();
+        int next;
+        for (int j = 0; j < 10; j++) {
+            // renvoie un entier entre 0 - 9
+             next = ran.nextInt(10);
+             System.out.println(next);
+        }
+
+
+
+
+
+    }
+
+    /** Se balader dans le graph de noeud en noeud en suivant les liens
+     *
+     * @param nbStep
+     */
+    public void randomWalk(int nbStep){
+
+
+    }
+
 }
