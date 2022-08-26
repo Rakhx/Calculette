@@ -164,4 +164,16 @@ public class ManipulationGraph {
         System.out.println(chemin);
     }
 
+
+    /** Fonction qui va trier le tableau en parametre
+     * 
+     * @param entree tableau en entrée
+     * @param croissant boolean qui décide si le tableau doit etre trié
+     *                  en ordre croissant
+     * @return un tableau trié en ordre croissant ou décroissant
+     */
+    public int[] triTableau(int[] entree, boolean croissant){
+        
+        
+    }
 }
